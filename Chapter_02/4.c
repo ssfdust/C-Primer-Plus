@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 void jolly(void);
 void deny(void);
 
