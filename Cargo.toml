@@ -1,0 +1,21 @@
+[package]
+name = "C-Primer-Plus"
+version = "0.1.0"
+authors = ["ssfdust <ssfdust@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+promptly = "0.1.5"
+scan_fmt = "0.2.4"
+
+[[bin]]
+name = "6_6"
+path = "Chapter_06/6.rs"
+
+[[bin]]
+name = "6_7"
+path = "Chapter_06/7.rs"
+
+[[bin]]
+name = "6_8"
+path = "Chapter_06/8.rs"

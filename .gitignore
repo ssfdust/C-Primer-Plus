@@ -58,3 +58,5 @@ Debug
 *.ncb
 *.opt
 *.plg
+/target
+**/*.rs.bk
