@@ -9,6 +9,10 @@ promptly = "0.1.5"
 scan_fmt = "0.2.4"
 
 [[bin]]
+name = "macro"
+path = "src/macro.rs"
+
+[[bin]]
 name = "6_6"
 path = "Chapter_06/6.rs"
 
@@ -23,3 +27,8 @@ path = "Chapter_06/8.rs"
 [[bin]]
 name = "6_9"
 path = "Chapter_06/9.rs"
+
+[[bin]]
+name = "6_10"
+path = "Chapter_06/10.rs"
+

@@ -1,6 +1,3 @@
-#![feature(trace_macros)]
-
-trace_macros!(true);
 macro_rules! test_info {
     // 第一版 
     //
@@ -41,7 +38,9 @@ macro_rules! test_info {
     // 第二版的变异
     // (test $x:ident, $([$($args:tt)+]).+) => {let $x: String = $($($args)+).+;};
     // 第三版
-    (test $x:ident, $($args:tt $bract:tt).*,) => {let $x: String = $($args $bract).*;};
+    (test $x:ident, $($args:tt $bract:tt).*) => {let $x: String = $($args $bract).*;};
+    (test $c:ident) => {let $c = 3;};
+    (test $c:ident) => {let $c = 4;};
 }
 //
 // macro_rules! test_info {
@@ -50,9 +49,12 @@ macro_rules! test_info {
 fn main(){
     // 第二版的变异版本
     // test_info!(test a, [tmp()].[trim()].[parse()].[unwrap()]);
-    test_info!(test a, tmp().trim().parse().unwrap(), {});
+    test_info!(test a, tmp().trim().parse().unwrap()); 
+    test_info!(test c);
     
     println!("{}", a);
+    // 输出c c的值为4
+    println!("{}", c);
 }
 
 fn tmp() -> String {
