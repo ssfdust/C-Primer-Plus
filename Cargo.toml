@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 promptly = "0.1.5"
-scan_fmt = "0.2.4"
+text_io = "0.1.7"
 
 [[bin]]
 name = "macro"
