@@ -1,18 +1,18 @@
 #[macro_use]
-extern crate scan_fmt;
-extern crate promptly;
+extern crate text_io;
 
-use promptly::prompt;
+use std::io::{self, Write};
 
 pub fn main() {
-    let mut inputs: String = prompt("Input two numbers");
+    let mut inputs: String;
+    print!("Input two numbers");
+    io::stdout().flush().unwrap();
+    let (mut n, mut m): (f64, f64);
     loop {
-        let (n, m): (f64, f64) = match scan_fmt!(&inputs, "{} {}", f64, f64){
-            Ok((n, m)) => (n, m),
-            Err(_) => break
-        };
+        scan!("{} {}", n, m);
         println!("{:.2}", calculate(n, m));
-        inputs = prompt("Input your next pair of numbers");
+        print!("Input your next pair of numbers");
+        io::stdout().flush().unwrap();
     }
     println!("Bye!")
 }
