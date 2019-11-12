@@ -1,14 +1,19 @@
 #[macro_use]
-extern crate scan_fmt;
+extern crate text_io;
 extern crate promptly;
 
 use promptly::prompt;
+use std::error::Error;
 
 pub fn main() {
     let mut inputs: String = prompt("Enter lower and upper integer limits");
-    let mut results = scan_fmt!(&inputs, "{} {}", i32, i32).unwrap();
+    let (mut lower, mut upper): (i32, i32);
+    let get_input = |inputs: String, lower: &mut i32, upper: &mut i32| -> Result<(& i32, & i32), Box<Error>> {
+        scan!(inputs.bytes() => "{} {}", (*lower), (*upper));
+        Ok((lower, upper))
+    };
 
-    while let (lower, upper) = results {
+    while true {
         let mut sum = 0;
 
         for num in lower..upper + 1 {
