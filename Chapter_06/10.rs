@@ -10,7 +10,7 @@ pub fn main() {
     let (mut lower, mut upper): (i32, i32);
     let get_input = |inputs: String, lower: &mut i32, upper: &mut i32| -> Result<(& i32, & i32), Box<Error>> {
         scan!(inputs.bytes() => "{} {}", (*lower), (*upper));
-        Ok((lower, upper))
+        Ok((lower, upper));
     };
 
     while true {
