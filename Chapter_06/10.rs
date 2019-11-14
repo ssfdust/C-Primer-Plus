@@ -13,15 +13,15 @@ pub fn main() {
         Ok((lower, upper));
     };
 
-    while true {
-        let mut sum = 0;
-
-        for num in lower..upper + 1 {
-            sum += num.pow(2);
-        }
-
-        println!("The sums of the squares from {} to {} is {}",
-                 lower.pow(2), upper.pow(2), sum);
-        inputs = prompt("Input your next pair of numbers");
-    }
+/*     while true {
+ *         let mut sum = 0;
+ *
+ *         for num in lower..upper + 1 {
+ *             sum += num.pow(2);
+ *         }
+ *
+ *         println!("The sums of the squares from {} to {} is {}",
+ *                  lower.pow(2), upper.pow(2), sum);
+ *         inputs = prompt("Input your next pair of numbers");
+ *     } */
 }
